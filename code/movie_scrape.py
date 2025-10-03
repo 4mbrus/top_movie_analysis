@@ -4,7 +4,7 @@ import numpy as np
 from bs4  import BeautifulSoup
 import requests
 
-path = "C:/Users/Ambrus/OneDrive/top_movie_analysis"
+path = "C:/Users/Ambrus/OneDrive - Central European University (CEU GmbH Hungarian Branch Office)/top_movie_analysis"
 URL = "https://editorial.rottentomatoes.com/guide/best-movies-of-all-time/"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -34,6 +34,7 @@ for s in scores:
 top250['Score'] = score_list
 
 #Clean data
+top250['Title'] = top250['Title'].str.strip().astype(str)
 top250['Year'] = top250['Year'].str.replace('(', '').str.replace(')', '').astype(int)
 top250['Score'] = top250['Score'].str.replace('%', '').astype(int)
 
