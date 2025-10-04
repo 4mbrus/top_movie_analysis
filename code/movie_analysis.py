@@ -16,8 +16,8 @@ movies_per_year = pd.concat([movies_per_year, zero_years]).sort_index(ascending=
 print(movies_per_year)
 
 # Best year for movies
-movies_per_year.plot(kind='bar', figsize=(17,5), color='pink')
-plt.show()
+movies_per_year.plot(kind='bar', figsize=(17,5), color='pink', title="Number of top 300 movies per year")
+plt.savefig(f"{path}/output/movies_per_year.png")
 
 # Best decade for movies
 decade_list = [x for x in range(1920, 2030, 10)]
@@ -30,17 +30,24 @@ for year in df["Year"]:
 df.loc[df["Year"] >= 2020, "Decade"] = "2020s*"
 
 fig, ax = plt.subplots(figsize=(10,5))
-ax.bar( df["Decade"].value_counts().sort_index(ascending=True).index, df["Decade"].value_counts().sort_index(ascending=True), width=0.8, color='lightblue')
-plt.show()
+ax.bar(df["Decade"].value_counts().sort_index(ascending=True).index, df["Decade"].value_counts().sort_index(ascending=True), width=0.8, color='lightblue')
+ax.title.set_text("Number of top 300 movies per decade")
+plt.savefig(f"{path}/output/movies_per_decade.png")
 print("2020s* only includes movies from 2020-2025")
 
 # Some more descriptive statistics
-print(f"Mean year of top 300 movies: {df['Year'].mean()}")
-print(f"Median year of top 300 movies: {df['Year'].median()}")
-print(f"Oldest movie in top 300: {df['Year'].min()}")
-print(f"Newest movie in top 300: {df['Year'].max()}")
-print(f"Year with most movies in top 300: {movies_per_year.idxmax()} with {movies_per_year.max()} movies")
-print(f"Mean rating of top 300 movies: {df['Score'].mean()}")
-print(f"Median rating of top 300 movies: {df['Score'].median()}")
-print(f"Highest rated and highest ranked movie in top 300: {df.loc[df['Score'].idxmax()]['Title']} with a rating of {df['Score'].max()} in {df[df['Score'] == df['Score'].max()].index[0]+1}th place")
-print(f"Lowest rated movie in top 300: {df.loc[df['Score'].idxmin()]['Title']} with a rating of {df['Score'].min()} in {df[df['Score'] == df['Score'].min()].index[0]+1}th place")
+statistics_md = f"{path}/output/statistics.md"
+with open(statistics_md, "w") as f:
+    f.write("# Some descriptive statistics about the top 300 movies:\n\n")
+    f.write(f"- Mean year of top 300 movies: {round(df['Year'].mean(),2)}\n")
+    f.write(f"- Median year of top 300 movies: {df['Year'].median()}\n")
+    f.write(f"- Oldest movie in top 300: {df['Year'].min()}\n")
+    f.write(f"- Newest movie in top 300: {df['Year'].max()}\n")
+    f.write(f"- Year with most movies in top 300: {movies_per_year.idxmax()} with {movies_per_year.max()} movies\n")
+    f.write(f"- Mean rating of top 300 movies: {round(df['Score'].mean(),2)}\n")
+    f.write(f"- Median rating of top 300 movies: {df['Score'].median()}\n")
+    f.write(f"- Highest rated and highest ranked movie in top 300: {df.loc[df['Score'].idxmax()]['Title']} with a rating of {df.loc[df['Score'].idxmax()]['Rank']}th place\n")
+    f.write(f"- Lowest rated movie in top 300: {df.loc[df['Score'].idxmin()]['Title']} with a rating of {df['Score'].min()} in {df.loc[df['Score'].idxmin()]['Rank']}th place\n")
+    f.write(f"\n![Number of top 300 movies per year plot](./movies_per_year.png)\n")
+    f.write(f"![Number of top 300 movies per decade plot](./movies_per_decade.png)\n")
+    f.write(f"\n*Note: The 2020s decade only includes movies from 2020-2025 as the dataset was created in 2025.*\n")
