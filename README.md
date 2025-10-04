@@ -3,13 +3,14 @@
 **This project scrapes and analyses Rotten Tomatoes' "300 Best Movies of All Time" list.**
 
 ## Requirements
-See requirements.txt for packeges used.
+See [requirements.txt](requirements.txt) for packeges used.
 
 ## Data Source
 [RottenTomatoes: 300 Best Movies of All Time](https://editorial.rottentomatoes.com/guide/best-movies-of-all-time)
 
 ## Folder structure
 
+~~~
 top_movie_analysis:
 │   LICENSE
 │   README.md
@@ -26,3 +27,4 @@ top_movie_analysis:
 │
 └───raw
         top300movies.csv
+~~~
