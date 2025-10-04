@@ -1,4 +1,4 @@
-descriptiveimport pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 
 path = "C:/Users/Ambrus/OneDrive - Central European University (CEU GmbH Hungarian Branch Office)/top_movie_analysis"
