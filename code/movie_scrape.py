@@ -2,7 +2,7 @@ import pandas as pd
 from bs4  import BeautifulSoup
 import requests
 
-path = "C:/Users/Ambrus/OneDrive - Central European University (CEU GmbH Hungarian Branch Office)/top_movie_analysis"
+path = "C:/Users/Ambrus/OneDrive - Central European University (CEU GmbH Hungarian Branch Office)/top_movie_analysis" # Change this to your own path
 URL = "https://editorial.rottentomatoes.com/guide/best-movies-of-all-time/"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -38,3 +38,4 @@ top300['Score'] = top300['Score'].str.replace('%', '').astype(int)
 
 #Save to CSV
 top300.to_csv(f'{path}/raw/top300movies.csv', index=False)
+print(f"Saved top 300 movies to {path}/raw/top300movies.csv")
