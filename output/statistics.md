@@ -2,8 +2,8 @@
 
 - Mean year of top 300 movies: 1983.34
 - Median year of top 300 movies: 1988.5
-- Oldest movie in top 300: 1921
-- Newest movie in top 300: 2024
+- Oldest movie in top 300: 1921, The Kid (in case of multiple movies from that year, the highest ranked)
+- Newest movie in top 300: 2024, The Wild Robot (in case of multiple movies from that year, the highest ranked)
 - Year with most movies in top 300: 2019 with 11 movies
 - Mean rating of top 300 movies: 96.48
 - Median rating of top 300 movies: 97.0
