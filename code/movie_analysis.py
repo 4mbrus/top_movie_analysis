@@ -13,8 +13,6 @@ zero_years = pd.Series([0]*len(set(year_list)-set(movies_per_year.index)), index
 
 movies_per_year = pd.concat([movies_per_year, zero_years]).sort_index(ascending=True)
 
-print(movies_per_year)
-
 # Best year for movies
 movies_per_year.plot(kind='bar', figsize=(17,5), color='pink', title="Number of top 300 movies per year")
 plt.savefig(f"{path}/output/movies_per_year.png")
@@ -33,7 +31,6 @@ fig, ax = plt.subplots(figsize=(10,5))
 ax.bar(df["Decade"].value_counts().sort_index(ascending=True).index, df["Decade"].value_counts().sort_index(ascending=True), width=0.8, color='lightblue')
 ax.title.set_text("Number of top 300 movies per decade")
 plt.savefig(f"{path}/output/movies_per_decade.png")
-print("2020s* only includes movies from 2020-2025")
 
 # Some more descriptive statistics
 statistics_md = f"{path}/output/results.md"
