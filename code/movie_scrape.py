@@ -9,7 +9,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 #Create dataframe
 
-top250 = pd.DataFrame()
+top300 = pd.DataFrame()
 title_list = []
 year_list = []
 score_list = []
@@ -19,22 +19,22 @@ score_list = []
 titles = soup.find_all('a', class_='title')
 for t in titles:
     title_list.append(t.get_text())
-top250['Title'] = title_list
+top300['Title'] = title_list
 
 years = soup.find_all('span', class_='year')
 for y in years:
     year_list.append(y.get_text())
-top250['Year'] = year_list
+top300['Year'] = year_list
 
 scores = soup.find_all('span', class_='score')
 for s in scores:
     score_list.append(s.get_text())
-top250['Score'] = score_list
+top300['Score'] = score_list
 
 #Clean data
-top250['Title'] = top250['Title'].str.strip().astype(str)
-top250['Year'] = top250['Year'].str.replace('(', '').str.replace(')', '').astype(int)
-top250['Score'] = top250['Score'].str.replace('%', '').astype(int)
+top300['Title'] = top300['Title'].str.strip().astype(str)
+top300['Year'] = top300['Year'].str.replace('(', '').str.replace(')', '').astype(int)
+top300['Score'] = top300['Score'].str.replace('%', '').astype(int)
 
 #Save to CSV
-top250.to_csv(f'{path}/raw/top250movies.csv', index=False)
+top300.to_csv(f'{path}/raw/top300movies.csv', index=False)
