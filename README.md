@@ -23,8 +23,20 @@ top_movie_analysis:
 ├───output
 │       movies_per_decade.png
 │       movies_per_year.png
-│       statistics.md
+│       results.md
 │
 └───raw
         top300movies.csv
 ~~~
+
+## Reproduction
+
+1. Clone repository
+2. Change "path" variable in both .py files in the "code" folder
+3. Run "movie_scrape.py"
+4. Run "movie_analysis.py"
+5. Check your results in the output folder.
+
+## Results
+
+The [statistics.md](/output/results.md) file contains my finding from 04.10.2025. If code is executed, all finding will be written there.
