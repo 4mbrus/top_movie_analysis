@@ -36,7 +36,7 @@ plt.savefig(f"{path}/output/movies_per_decade.png")
 print("2020s* only includes movies from 2020-2025")
 
 # Some more descriptive statistics
-statistics_md = f"{path}/output/statistics.md"
+statistics_md = f"{path}/output/results.md"
 with open(statistics_md, "w") as f:
     f.write("# Some descriptive statistics about the top 300 movies:\n\n")
     f.write(f"- Mean year of top 300 movies: {round(df['Year'].mean(),2)}\n")
