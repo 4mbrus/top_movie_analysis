@@ -13,8 +13,9 @@ top300 = pd.DataFrame()
 title_list = []
 year_list = []
 score_list = []
+top300['Rank'] = list(range(1, 301))
 
-#Create lists for titles, years, and scores
+#Create lists for titles, years, and scores and add them to the dataframe
 
 titles = soup.find_all('a', class_='title')
 for t in titles:
