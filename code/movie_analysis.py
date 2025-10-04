@@ -1,9 +1,9 @@
-import pandas as pd
+descriptiveimport pandas as pd
 import matplotlib.pyplot as plt
 
 path = "C:/Users/Ambrus/OneDrive - Central European University (CEU GmbH Hungarian Branch Office)/top_movie_analysis"
 
-df = pd.read_csv(f"{path}/raw/top250movies.csv")
+df = pd.read_csv(f"{path}/raw/top300movies.csv")
 
 year_list = [x for x in range(1920, 2026)]
 
@@ -35,12 +35,12 @@ plt.show()
 print("2020s* only includes movies from 2020-2025")
 
 # Some more descriptive statistics
-print(f"Mean year of top 250 movies: {df['Year'].mean()}")
-print(f"Median year of top 250 movies: {df['Year'].median()}")
-print(f"Oldest movie in top 250: {df['Year'].min()}")
-print(f"Newest movie in top 250: {df['Year'].max()}")
-print(f"Year with most movies in top 250: {movies_per_year.idxmax()} with {movies_per_year.max()} movies")
-print(f"Mean rating of top 250 movies: {df['Score'].mean()}")
-print(f"Median rating of top 250 movies: {df['Score'].median()}")
-print(f"Highest rated and highest ranked movie in top 250: {df.loc[df['Score'].idxmax()]['Title']} with a rating of {df['Score'].max()} in {df[df['Score'] == df['Score'].max()].index[0]+1}th place")
-print(f"Lowest rated movie in top 250: {df.loc[df['Score'].idxmin()]['Title']} with a rating of {df['Score'].min()} in {df[df['Score'] == df['Score'].min()].index[0]+1}th place")
+print(f"Mean year of top 300 movies: {df['Year'].mean()}")
+print(f"Median year of top 300 movies: {df['Year'].median()}")
+print(f"Oldest movie in top 300: {df['Year'].min()}")
+print(f"Newest movie in top 300: {df['Year'].max()}")
+print(f"Year with most movies in top 300: {movies_per_year.idxmax()} with {movies_per_year.max()} movies")
+print(f"Mean rating of top 300 movies: {df['Score'].mean()}")
+print(f"Median rating of top 300 movies: {df['Score'].median()}")
+print(f"Highest rated and highest ranked movie in top 300: {df.loc[df['Score'].idxmax()]['Title']} with a rating of {df['Score'].max()} in {df[df['Score'] == df['Score'].max()].index[0]+1}th place")
+print(f"Lowest rated movie in top 300: {df.loc[df['Score'].idxmin()]['Title']} with a rating of {df['Score'].min()} in {df[df['Score'] == df['Score'].min()].index[0]+1}th place")
