@@ -50,4 +50,4 @@ with open(statistics_md, "w") as f:
     f.write(f"- Lowest rated movie in top 300: {df.loc[df['Score'].idxmin()]['Title']} with a rating of {df['Score'].min()} in {df.loc[df['Score'].idxmin()]['Rank']}th place\n")
     f.write(f"\n![Number of top 300 movies per year plot](./movies_per_year.png)\n")
     f.write(f"![Number of top 300 movies per decade plot](./movies_per_decade.png)\n")
-    f.write(f"\n*Note: The 2020s decade only includes movies from 2020-2025 as the dataset was created in 2025.*\n")
+    f.write(f"\n\*Note: The 2020s decade only includes movies from 2020-2025 as the dataset was created in 2025.*\n")

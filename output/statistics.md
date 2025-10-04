@@ -13,4 +13,4 @@
 ![Number of top 300 movies per year plot](./movies_per_year.png)
 ![Number of top 300 movies per decade plot](./movies_per_decade.png)
 
-*Note: The 2020s decade only includes movies from 2020-2025 as the dataset was created in 2025.*
+\*Note: The 2020s decade only includes movies from 2020-2025 as the dataset was created in 2025.*
