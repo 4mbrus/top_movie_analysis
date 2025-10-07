@@ -5,7 +5,7 @@
 ## Requirements
 - Tested OS: Windows 11 24H2, Fedora Linux 42
 - Tested python versions: 3.12 and 3.13
-- Packages: see [requirements.txt](requirements.txt)
+- Packages: see [environment.yml](environment.yml)
 - Hardware: anything that can run python
 
 ## Data Source
@@ -17,7 +17,7 @@
 top_movie_analysis:
 │   LICENSE
 │   README.md
-│   requirements.txt
+│   environment.yml
 │
 ├───code
 │       movie_analysis.py
@@ -34,14 +34,15 @@ top_movie_analysis:
 
 ## Reproduction
 1. Clone repository
-2. Change "path" variable in both .py files in the "code" folder
-3. Run "movie_scrape.py"
-4. Run "movie_analysis.py"
-5. Check your results in the output folder.
+2. In the root folder of the project, run in terminal/Anaconda prompt: "conda env update -f environment.yml --prune" to get the necessary packages.
+3. Change "path" variable in both .py files in the "code" folder
+4. Run "movie_scrape.py"
+5. Run "movie_analysis.py"
+6. Check your results in the output folder.
 
 ## Results
 
-The [statistics.md](/output/results.md) file contains my finding from 04.10.2025. If code is executed, all findings will be written there.
+The [statistics.md](/output/results.md) file contains my findings from 04.10.2025. If code is executed, all findings will be written there.
 
 # License
 
