@@ -1,0 +1,9 @@
+name: movie_analysis
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - bs4
+  - numpy
+  - requests
+  - matplotlib
