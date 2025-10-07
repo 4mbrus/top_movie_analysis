@@ -43,7 +43,7 @@ top_movie_analysis:
 
 The [statistics.md](/output/results.md) file contains my finding from 04.10.2025. If code is executed, all findings will be written there.
 
-# Licence
+# License
 
 MIT License
 
